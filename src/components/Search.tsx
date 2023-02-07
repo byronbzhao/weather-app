@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, useEffect } from 'react';
+import { ChangeEvent } from 'react';
 import { optionType } from '../types';
 
 type Props ={

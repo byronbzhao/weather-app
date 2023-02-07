@@ -1,8 +1,6 @@
-import React, { useState, ChangeEvent, useEffect } from 'react';
 import Forecast from './components/Forecast';
 import Search from './components/Search';
 import useForecast from './hooks/useForecast';
-import { optionType, forecastType } from './types';
 
 function App(): JSX.Element {
 	const { term, options, forecast, onInputChange, onOptionSelect, onSubmit } =

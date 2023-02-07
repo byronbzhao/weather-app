@@ -19,8 +19,8 @@ export type forecastType = {
 				humidity: number;
 				pressure: number;
 				temp: number;
-				tem_max: number;
 				temp_max: number;
+				temp_min: number;
 			};
 			weather: [
 				{

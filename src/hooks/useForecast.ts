@@ -1,8 +1,8 @@
-import React, {useState, useEffect, ChangeEvent} from 'react'
+import { useState, useEffect, ChangeEvent } from 'react';
 import { optionType, forecastType } from '../types';
 
 const useForecast = () => {
-    const [term, setTerm] = useState<string>('');
+	const [term, setTerm] = useState<string>('');
 	const [options, setOptions] = useState<[]>([]);
 	const [city, setCity] = useState<optionType | null>(null);
 	const [forecast, setForecast] = useState<forecastType | null>(null);
@@ -32,12 +32,13 @@ const useForecast = () => {
 		)
 			.then((res) => res.json())
 			.then((data) => {
-                const forecastData = {
-                    ...data.city,
-                    list: data.list.slice(0,16),
-                }
-                setForecast(forecastData)
-            });
+				const forecastData = {
+					...data.city,
+					list: data.list.slice(0, 16),
+				};
+				setForecast(forecastData);
+			})
+			.catch((e) => console.log(e));
 	};
 
 	const onSubmit = () => {
@@ -57,10 +58,14 @@ const useForecast = () => {
 		}
 	}, [city]);
 
-    return {
-        term, options, forecast, onInputChange, onOptionSelect, onSubmit
-    }
+	return {
+		term,
+		options,
+		forecast,
+		onInputChange,
+		onOptionSelect,
+		onSubmit,
+	};
+};
 
-}
-
-export default useForecast
+export default useForecast;
